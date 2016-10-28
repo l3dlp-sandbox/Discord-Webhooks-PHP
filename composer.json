@@ -1,10 +1,10 @@
 {
     "name": "auroraari/discord-webhooks",
-    "description": "A (really) lightweight library to use Discord webhooks",
+    "description": "A (really) lightweight wrapper to use Discord webhooks",
     "homepage": "https://github.com/AuroraAri/Discord-Webhooks-PHP",
-    "keywords": ["php", "library", "discordapp", "discord", "webhooks"],
+    "keywords": ["php", "wrapper", "discordapp", "discord", "webhooks"],
     "license": "Unlicense",
-    "type": "library",
+    "type": "wrapper",
     "require": {
         "php": "^5.3",
         "ext-curl": "^0.0.0"
