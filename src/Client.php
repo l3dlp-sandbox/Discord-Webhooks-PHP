@@ -59,13 +59,25 @@ class Client
         $this->avatar = $avatar;
     }
     
+    /*
+     * (Optional) Set the message to be sent; if not set, uses the message set in $this->send()
+     * @param string $message The message to send through the webhook
+     */
+    
+     public function message($message) {
+         $this->message = $message;
+     }
+    
      /* 
      * Sends a message through the webhook
      * @param string $message The message to send through the webhook
      */
     
-    public function send($message) {
-        $this->message = $message;
+    public function send($message = '') {
+        if (!empty($message)) {
+            $this->message = $message;
+        }
+        
         $url = $this->url;
         
         $data = array(
