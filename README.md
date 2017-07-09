@@ -9,15 +9,16 @@ The smallest wrapper to interact with [Discord](https://discordapp.com) webhooks
 PHP 5.3+ required, along with ext-curl. This wrapper has not been tested with HHVM, but there's no reason it shouldn't work!
 
 1. Run `git clone https://github.com/l3dlp/Discord-Webhooks-PHP.git` to install the latest release.
-2. Open `lib.php` and put your webhook url 
+2. Open `test.php` and put your webhook url 
 
 ```php
 <?php
+
+// Settings
 $discord_url = 'URL-FROM-DISCORD';
 ```
  
-3. Include the `discord.php` file
-4. Enjoy! 
+3. Deploy it in your own apps. 
 
 
 
@@ -34,23 +35,30 @@ $discord_url = 'URL-FROM-DISCORD';
 
 
 
-### Example 1: smallest call
+### Basic run
 ```php
 <?php
-    include __DIR__.'/discord.php';   // You can change the file name and put it wherever you like 
-    $discord->send('Hello World');
+
+// Settings
+$discord_url = 'YOUR-DISCORD-WEBHOOK-URL';
+
+// Core
+include __DIR__.'/discord.php';
+use \DiscordWebhooks\Client as DiscordWebhook;
+$discord = new DiscordWebhook($discord_url);
+$discord->send('Hello World');
 ```
 
 
 
-### Example 2: detailed call
+### Options
 ```php
 <?php
-    include __DIR__.'/discord.php';   // You can change the file name and put it wherever you like
-    $discord->name('ME'); // Optionally, provide a name that the message will be sent from. If not set, uses the name set in Discord.
-    $discord->avatar('https://your.own/avatar.jpg'); // Optionally, a URL for the user's avatar. If not set, uses the avatar set in Discord.
-    $discord->message('Hello World'); // Optionally, set the message to be sent here. If not set, uses the message in $this->send().
-    $discord->send(); // This method sends the previously set message.
+include __DIR__.'/discord.php';   // You can change the file name and put it wherever you like
+$discord->name('ME'); // Optionally, provide a name that the message will be sent from. If not set, uses the name set in Discord.
+$discord->avatar('https://your.own/avatar.jpg'); // Optionally, a URL for the user's avatar. If not set, uses the avatar set in Discord.
+$discord->message('Hello World'); // Optionally, set the message to be sent here. If not set, uses the message in $this->send().
+$discord->send(); // This method sends the previously set message.
 ```
 
 

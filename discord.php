@@ -1,11 +1,6 @@
 <?php
 
-// Settings
-$discord_url = 'URL-FROM-DISCORD';
-
-
-
-// Core
+// Lib
 namespace DiscordWebhooks;
 
 class Client
