@@ -1,5 +1,11 @@
 <?php
 
+// Settings
+$discord_url = 'URL-FROM-DISCORD';
+
+
+
+// Core
 namespace DiscordWebhooks;
 
 class Client
@@ -109,3 +115,6 @@ class Client
         return true;
     }
 }
+
+use \DiscordWebhooks\Client as DiscordWebhook;
+$discord = new DiscordWebhook($discord_url);
